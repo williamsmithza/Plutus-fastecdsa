@@ -2,9 +2,11 @@
 
 An automated Bitcoin wallet collider that brute forces random wallet addresses 50% faster!
 
-# Like This Project? Give It A Star
+# Like This Project? Why not donate:
 
-[![](https://img.shields.io/github/stars/Isaacdelly/Plutus.svg)](https://github.com/Isaacdelly/Plutus)
+```
+1AE49AcJKLYd3XCgLdHaSGyZGVLeR8Pzo7
+```
 
 # Dependencies
 
@@ -48,9 +50,9 @@ This program also utilizes multiprocessing through the `multiprocessing.Process(
 
 # Efficiency
 
-It takes `0.0032457721` seconds for this progam to brute force a __single__ Bitcoin address. 
+With Fastecdsa the efficieny of this code has increased by 50%, from `0.0032457721` seconds (without Fastecdsa) to `0.0017291287` seconds (with Fastecdsa) for this progam to brute force a __single__ Bitcoin address. 
 
-However, through `multiprocessing.Process()` a concurrent process is created for every CPU your computer has. So this program can brute force addresses at a speed of `0.0032457721 ÷ cpu_count()` seconds.
+However, through `multiprocessing.Process()` a concurrent process is created for every CPU your computer has. So this program can brute force addresses at a speed of `0.0017291287 ÷ cpu_count()` seconds.
 
 # Database FAQ
 
@@ -65,7 +67,6 @@ Every time this program checks the balance of a generated address, it will print
 However, if a balance is found, then all necessary information about the wallet will be saved to the text file `plutus.txt`. An example is:
 
 >hex private key: 5A4F3F1CAB44848B2C2C515AE74E9CC487A9982C9DD695810230EA48B1DCEADD<br/>
->WIF private key: 5JW4RCAXDbocFLK9bxqw5cbQwuSn86fpbmz2HhT9nvKMTh68hjm<br/>
 >public key: 04393B30BC950F358326062FF28D194A5B28751C1FF2562C02CA4DFB2A864DE63280CC140D0D540EA1A5711D1E519C842684F42445C41CB501B7EA00361699C320<br/>
 >address: 1Kz2CTvjzkZ3p2BQb5x5DX6GEoHX2jFS45<br/>
 
@@ -85,4 +86,4 @@ The memory consumption stack trace was made by using <a href="https://pypi.org/p
 
 - [X] Fastecdsa support for faster public key creation
 
-<a href="https://github.com/Isaacdelly/Plutus/issues">Create an issue</a> so I can add more stuff to improve
+<a href="https://github.com/imcmurray/Plutus-fastecdsa/issues">Create an issue</a> so I can add more stuff to improve
