@@ -42,7 +42,7 @@ This program is essentially a brute forcing algorithm. It continuously generates
 
 Private keys are generated randomly to create a 32 byte hexidecimal string using the cryptographically secure `os.urandom()` function.
 
-The private keys are converted into their respective public keys using the `starkbank-ecdsa` Python module. Then the public keys are converted into their Bitcoin wallet addresses using the `binascii` and `hashlib` standard libraries.
+The private keys are converted into their respective public keys using the `fastecdsa` ~~`starkbank-ecdsa`~~ Python module. Then the public keys are converted into their Bitcoin wallet addresses using the `binascii` and `hashlib` standard libraries.
 
 A pre-calculated database of every P2PKH Bitcoin address with a positive balance is included in this project. The generated address is searched within the database, and if it is found that the address has a balance, then the private key, public key and wallet address are saved to the text file `plutus.txt` on the user's hard drive.
 
@@ -50,7 +50,7 @@ This program also utilizes multiprocessing through the `multiprocessing.Process(
 
 # Efficiency
 
-With Fastecdsa the efficieny of this code has increased by 50%, from `0.0032457721` seconds (without Fastecdsa) to `0.0017291287` seconds (with Fastecdsa) for this progam to brute force a __single__ Bitcoin address. 
+With Fastecdsa the efficieny of this code has increased by an average of 50%, from `0.0032457721` seconds (without Fastecdsa) to `0.0017291287` seconds (with Fastecdsa) for this progam to brute force a __single__ Bitcoin address. 
 
 However, through `multiprocessing.Process()` a concurrent process is created for every CPU your computer has. So this program can brute force addresses at a speed of `0.0017291287 ÷ cpu_count()` seconds.
 
@@ -86,4 +86,3 @@ The memory consumption stack trace was made by using <a href="https://pypi.org/p
 
 - [X] Fastecdsa support for faster public key creation
 
-<a href="https://github.com/imcmurray/Plutus-fastecdsa/issues">Create an issue</a> so I can add more stuff to improve
