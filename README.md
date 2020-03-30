@@ -19,7 +19,7 @@ Minimum <a href="#memory-consumption">RAM requirements</a>
 # Installation
 
 ```
-$ git clone https://github.com/imcmurray/Plutus-fastecdsa.git
+$ git clone https://github.com/williamsmithza/Plutus-fastecdsa.git
 
 $ cd Plutus-fastecdsa && pip3 install -r requirements.txt
 ```
